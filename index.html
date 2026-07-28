@@ -13,7 +13,7 @@
     />
 
     <link rel="stylesheet" href="./src/styles.css" />
-    <script type="module" src="./src/main.js" defer></script>
+    <script type="module" src="./src/js/main.js"></script>
   </head>
   <body>
     <main>
@@ -21,7 +21,7 @@
         <div class="container search__container">
           <h1 class="search__heading" id="section-heading">Search a Book</h1>
 
-          <form class="search__form">
+          <form class="search__form" data-js="search-form">
             <label class="search__label" for="book-search">Book title</label>
             <input
               class="search__input"
@@ -30,10 +30,17 @@
               type="search"
               placeholder="Example: Dune"
               aria-describedby="search-error"
+              data-js="search-input"
             />
-            <button class="search__btn btn" type="submit">Search</button>
+            <button class="search__btn btn" type="submit" data-js="">
+              Search
+            </button>
 
-            <p class="search__error" id="search-error"></p>
+            <p
+              class="search__error"
+              id="search-error"
+              data-js="search-error"
+            ></p>
           </form>
         </div>
       </section>
