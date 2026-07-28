@@ -8,5 +8,25 @@
     <link rel="stylesheet" href="./src/styles.css" />
     <script type="module" src="./src/main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section aria-labelledby="section-heading">
+        <h1 id="section-heading">Search a Book</h1>
+
+        <form>
+          <label for="book-search">Book title</label>
+          <input
+            id="book-search"
+            name="query"
+            type="search"
+            placeholder="Example: Dune"
+            aria-describedby="search-error"
+          />
+          <button type="submit">Search</button>
+
+          <p id="search-error"></p>
+        </form>
+      </section>
+    </main>
+  </body>
 </html>
