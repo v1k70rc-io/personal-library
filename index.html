@@ -5,8 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Personal Librery</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./src/styles.css" />
-    <script type="module" src="./src/main.js" defer></script>
+    <script type="module" src="./src/js/main.js"></script>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section class="search" aria-labelledby="section-heading">
+        <div class="container search__container">
+          <h1 class="search__heading" id="section-heading">Search a Book</h1>
+
+          <form class="search__form" data-js="search-form">
+            <label class="search__label" for="book-search">Book title</label>
+            <input
+              class="search__input"
+              id="book-search"
+              name="query"
+              type="search"
+              placeholder="Example: Dune"
+              aria-describedby="search-error"
+              data-js="search-input"
+            />
+            <button class="search__btn btn" type="submit" data-js="">
+              Search
+            </button>
+
+            <p
+              class="search__error"
+              id="search-error"
+              data-js="search-error"
+            ></p>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
