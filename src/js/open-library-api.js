@@ -1,3 +1,13 @@
+function normalizeBook(book) {
+  return {
+    id: book.key,
+    title: book.title,
+    authors: book.author_name ?? [],
+    firstPublishedYear: book.first_publish_year ?? null,
+    coverId: book.cover_i ?? null,
+  };
+}
+
 export async function searchBooks(searchTerm) {
   const url = new URL("https://openlibrary.org/search.json");
 
@@ -12,5 +22,7 @@ export async function searchBooks(searchTerm) {
 
   const data = await response.json();
 
-  return data.docs;
+  return data.docs.map((book) => {
+    return normalizeBook(book);
+  });
 }
