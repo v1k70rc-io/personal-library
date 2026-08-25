@@ -4,7 +4,10 @@ function normalizeBook(book) {
     title: book.title,
     authors: book.author_name ?? [],
     firstPublishedYear: book.first_publish_year ?? null,
-    coverId: book.cover_i ?? null,
+    coverUrl:
+      book.cover_i != null
+        ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`
+        : null,
   };
 }
 
