@@ -1,4 +1,4 @@
-export function initSearchForm() {
+export function initSearchForm(onSearch) {
   const searchForm = document.querySelector('[data-js="search-form"]');
   const searchInput = document.querySelector('[data-js="search-input"]');
   const searchError = document.querySelector('[data-js="search-error"]');
@@ -14,6 +14,7 @@ export function initSearchForm() {
     }
 
     searchError.textContent = "";
-    console.log(searchTerm);
+
+    onSearch(searchTerm);
   });
 }
